@@ -1,0 +1,15 @@
+<% include partials/header  %>
+
+<h1>Edit the Birthday...</h1>
+<form action="/birthdays/<%= birthday._id %>?_method=PUT" method="POST" id="entry-form">
+    <input type="text" value="<%= birthday.name %>" name="birthday[name]" placeholder="Enter your name">
+    <input type="text" value="<%= birthday.birthday%>"  name="birthday[birthday]" placeholder="Enter your birthday">
+    <input type="text" value="<%= birthday.age%>"  name="birthday[age]" placeholder="Enter your age">
+    <input type="text" value="<%= birthday.giftIdeas%>"  name="birthday[giftIdeas]" placeholder="Enter gift ideas">
+    <input type="text" value="<%= birthday.imageURL%>"  name="birthday[imageURL]" placeholder="Enter image URL">
+    <input type="submit">
+</form>
+
+<a href="/">Back to home</a>
+
+<% include partials/footer  %>

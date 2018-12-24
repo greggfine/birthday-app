@@ -1,0 +1,38 @@
+<% include partials/header  %>
+
+<!-- <form  id="entry-form">
+    <input type="text" value="<%=birthday.name    %> " name="birthday[name]" placeholder="Enter your name">
+    <input type="text" value="<%=birthday.birthday    %> " name="birthday[birthday]" placeholder="Enter your birthday">
+    <input type="text" value="<%=birthday.age    %> " name="birthday[age]" placeholder="Enter your age">
+    <input type="text" value="<%=birthday.giftIdeas    %> " name="birthday[giftIdeas]" placeholder="Enter gift ideas">
+    <input type="text" value="<%=birthday.name    %> " name="birthday[imageURL]" placeholder="Enter image URL">
+    <input type="submit">
+</form> -->
+
+
+
+<div class="birthday-wrapper">
+    <h1><%= birthday.name %></h1>
+    <img src="<%= birthday.imageURL %>" alt="">
+    <h3><strong>Birthday</strong>:
+        <%= birthday.birthday %>
+    </h3>
+    <h3><strong>Age: </strong>
+        <%= birthday.age %>
+    </h3>
+    <h4>Gift Ideas: <%- birthday.giftIdeas %></h4>
+    <p>
+        <a href="/birthdays/<%= birthday._id %>/edit"><button>Edit Birthday</button></a>
+    </p>
+    <form action="/birthdays/<%= birthday._id %>?_method=DELETE" method="POST">
+        <button>Delete Birthday</button>
+    </form>
+</div>
+
+
+
+
+<a href="/">Back to home</a>
+
+
+<% include partials/footer  %>

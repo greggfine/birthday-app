@@ -1,7 +1,11 @@
 <% include partials/header  %>
 
-<form action="/birthdays" method="POST">
-    <input type="text" placeholder="Enter your birthday">
+<form action="/birthdays" method="POST" id="entry-form" >
+    <input type="text" name="birthday[name]" placeholder="Enter your name">
+    <input type="text" name="birthday[birthday]" placeholder="Enter your birthday">
+    <input type="text" name="birthday[age]" placeholder="Enter your age">
+    <input type="text" name="birthday[giftIdeas]" placeholder="Enter gift ideas">
+    <input type="text" name="birthday[imageURL]" placeholder="Enter image URL">
     <input type="submit">
 </form>
 

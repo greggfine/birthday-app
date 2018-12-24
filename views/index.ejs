@@ -1,7 +1,21 @@
 <% include partials/header  %>
 
-<h1>LIST OF BIRTHDAYS</h1>
-<a href="/birthdays/new"><button>Create a new birthday</button></a>
+<% for(let birthday of birthdays){ %>
+    <div class="birthday-wrapper">
+        <h1><%= birthday.name %></h1>
+        <img src="<%= birthday.imageURL %>" alt="">
+        <h3><strong>Birthday</strong>: <%= birthday.birthday %></h3>
+        <h3><strong>Age: </strong><%= birthday.age %></h3>
+        <h4>Gift Ideas: <%- birthday.giftIdeas.substring(0, 15) %>...</h4>
+        <p>
+            <a href="/birthdays/<%= birthday._id %>"><button>View Birthday</button></a>
+        </p>
+    </div>
+<% } %>
+
+<a href="/birthdays/new">
+    <button>Create a new birthday</button>
+</a>
 
 
 <% include partials/footer  %>
